@@ -6,7 +6,6 @@ import (
 )
 
 func Test_SeqSearch(t *testing.T) {
-
 	t.Skip()
 	t.Parallel()
 
@@ -21,7 +20,6 @@ func Test_SeqSearch(t *testing.T) {
 }
 
 func Test_BinSearch(t *testing.T) {
-
 	t.Skip()
 	t.Parallel()
 
@@ -46,7 +44,7 @@ func Test_BinSearch(t *testing.T) {
 }
 
 func Test_Reverse(t *testing.T) {
-
+	t.Skip()
 	t.Parallel()
 
 	ar := []int{1, 2, 8, 7, 5, 9, 6, 3, 4}
@@ -56,6 +54,26 @@ func Test_Reverse(t *testing.T) {
 
 	if !reflect.DeepEqual(ar, m.Get()) {
 		t.Error("Reverse error\n", ar, "\n!=\n", m.Get())
+	}
+
+}
+
+func Test_Rotate(t *testing.T) {
+	//t.Skip()
+	t.Parallel()
+
+	m := MyList{[]int{1, 2, 3, 4, 5, 6}}
+	m.Rotate(2)
+
+	if !reflect.DeepEqual([]int{3, 4, 5, 6, 1, 2}, m.Get()) {
+		t.Error("Rotate left error\n", m.Get())
+	}
+
+	m = MyList{[]int{1, 2, 3, 4, 5, 6}}
+	m.Rotate(-2)
+
+	if !reflect.DeepEqual([]int{5, 6, 1, 2, 3, 4}, m.Get()) {
+		t.Error("Rotate right error\n", m.Get())
 	}
 
 }

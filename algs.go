@@ -79,18 +79,25 @@ func (m *MyList) Reverse(i, j int) {
 // [1, 2, 3, 4, 5, 6] -> by 2 -> positions to [3, 4, 5, 6, 1, 2]
 func (m *MyList) Rotate(val int) {
 
-	//for _, _ := range (*m).mas {
-
-	//}
-
+	n := len((*m).mas) - 1
+	if val > 0 {
+		m.Reverse(0, val-1) // 2 1 3 4 5 6 (to left)
+		m.Reverse(val, n)   // 2 1 6 5 4 3
+	} else {
+		val = -val
+		m.Reverse(n-val+1, n) // 1 2 3 4 6 5 (to right)
+		m.Reverse(0, n-val)   // 4 3 2 1 5 6
+	}
+	m.Reverse(0, n) // complete
 }
 
 func main() {
 
-	m := MyList{[]int{1, 2, 8, 7, 5, 9, 6, 3, 4}}
+	// m := MyList{[]int{1, 2, 8, 7, 5, 9, 6, 3, 4}}
+	m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 
 	fmt.Println(m.Get())
-	m.Reverse(0, 8)
+	m.Rotate(-5)
 
 	fmt.Println(m.Get())
 
