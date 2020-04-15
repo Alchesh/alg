@@ -96,10 +96,8 @@ func main() {
 	// m := MyList{[]int{1, 2, 8, 7, 5, 9, 6, 3, 4}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 
-	//fmt.Println(m.Get())
-
-	val := 6
-	fmt.Println("Factorial of ", val, " = ", fakk(val))
+	//fmt.Println("Summas=", SumMas([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
+	fmt.Println("Summas=", SumMas([]int{4, 2, 8, 7, 5, 9, 6, 1, 3}))
 
 	fmt.Println("\nAll Done!")
 }
