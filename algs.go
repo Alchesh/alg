@@ -94,12 +94,12 @@ func (m *MyList) Rotate(val int) {
 func main() {
 
 	// m := MyList{[]int{1, 2, 8, 7, 5, 9, 6, 3, 4}}
-	m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
+	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 
-	fmt.Println(m.Get())
-	m.Rotate(-5)
+	//fmt.Println(m.Get())
 
-	fmt.Println(m.Get())
+	val := 6
+	fmt.Println("Factorial of ", val, " = ", fakk(val))
 
 	fmt.Println("\nAll Done!")
 }
