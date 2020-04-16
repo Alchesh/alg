@@ -19,10 +19,11 @@ func Sum(val int) int {
 	return val + Sum(val-1)
 }
 
-// Fib - fibonacci
+// Fib - fibonacci (not 0!)
+// 1 1 2 3 5 8 13
 func Fib(val int) int {
 
-	if val == 1 || val == 2 {
+	if val <= 2 {
 		return 1
 	}
 

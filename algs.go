@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 // MyList - simple array
 type MyList struct {
@@ -91,13 +95,37 @@ func (m *MyList) Rotate(val int) {
 	m.Reverse(0, n) // complete
 }
 
+func generate(t, size, max_val int) []int {
+
+	ar := make([]int, size)
+
+	switch t {
+	case 0: //sorted
+		for i := 0; i < size; i++ {
+			ar[i] = i
+		}
+	case 1: //not sorted
+		rand.Seed(time.Now().UnixNano())
+		for i := 0; i < size; i++ {
+			ar[i] = rand.Intn(max_val)
+		}
+	}
+
+	return ar
+}
+
 func main() {
 
-	// m := MyList{[]int{1, 2, 8, 7, 5, 9, 6, 3, 4}}
+	// m := MyList{generate(0, 10)}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
+	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
 
 	//fmt.Println("Summas=", SumMas([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
-	fmt.Println("Summas=", SumMas([]int{4, 2, 8, 7, 5, 9, 6, 1, 3}))
+	//fmt.Println("Fib=", Fib(7))
+
+	//m.SortSearchDup()
+
+	fmt.Println("Generate", generate(1, 30, 20))
 
 	fmt.Println("\nAll Done!")
 }
