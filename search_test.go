@@ -28,9 +28,23 @@ func BenchmarkHashSearchDup(b *testing.B) {
 	}
 }
 
-func BenchmarkCountSearchDup(b *testing.B) {
+func BenchmarkSeqCalcMax(b *testing.B) {
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
-		m.CountSearchDup()
+		m.SeqCalcMax()
+	}
+}
+
+func BenchmarkSortCalcMax(b *testing.B) {
+	m := MyList{generate(1, MaxCount, RandomRange)}
+	for i := 0; i < b.N; i++ {
+		m.SortCalcMax()
+	}
+}
+
+func BenchmarkCountCalcMax(b *testing.B) {
+	m := MyList{generate(1, MaxCount, RandomRange)}
+	for i := 0; i < b.N; i++ {
+		m.CountCalcMax()
 	}
 }
