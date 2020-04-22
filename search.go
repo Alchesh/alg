@@ -115,7 +115,7 @@ func (m *MyList) SortCalcMax() (int, int) {
 	return MaxCount, el
 }
 
-// SeqSearchDup - duplicates search by count
+// SeqSearchDup - calculate maximum number of times by count
 func (m *MyList) CountCalcMax() (int, int) {
 
 	el := 0

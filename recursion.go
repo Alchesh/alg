@@ -41,3 +41,16 @@ func SumMas(val []int) int {
 
 	return val[n-1] + SumMas(val[0:n-1])
 }
+
+// PowerN - num**pow CPU = O(n)
+func PowerN(num, pow int) float32 {
+	if pow == 0 {
+		return 1
+	}
+
+	if pow > 0 {
+		return float32(num) * PowerN(num, pow-1)
+	}
+	return float32(PowerN(num, pow+1)) / float32(num)
+
+}

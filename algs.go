@@ -119,13 +119,13 @@ func main() {
 	// m := MyList{generate(0, 10)}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
-	m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
+	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
 
 	//fmt.Println("Summas=", SumMas([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
 	//fmt.Println("Fib=", Fib(7))
 
 	//m.CountSearchDup()
-	fmt.Println(m.CountCalcMax())
+	fmt.Println(PowerN(2, 2))
 
 	fmt.Println("\nAll Done!")
 }
