@@ -71,3 +71,15 @@ func PowerN2(num, pow int) int {
 		return num * int(math.Pow(float64(PowerN2(num, (pow-1)/2)), 2))
 	}
 }
+
+//SlowAdd - add by increment
+func SlowAdd(a, b int) int {
+	if a == 0 {
+		return b
+	}
+	if b == 0 {
+		return a
+	}
+
+	return SlowAdd(a-1, b) + 1
+}
