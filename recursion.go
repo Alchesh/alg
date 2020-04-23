@@ -1,5 +1,9 @@
 package main
 
+import (
+	"math"
+)
+
 // Fakk - factorial
 func Fakk(val int) int {
 	if val < 2 {
@@ -53,4 +57,17 @@ func PowerN(num, pow int) float32 {
 	}
 	return float32(PowerN(num, pow+1)) / float32(num)
 
+}
+
+// PowerN - num**pow CPU = O(logn)
+func PowerN2(num, pow int) int {
+	if pow == 0 {
+		return 1
+	}
+
+	if pow%2 == 0 {
+		return int(math.Pow(float64(PowerN2(num, pow/2)), 2))
+	} else {
+		return num * int(math.Pow(float64(PowerN2(num, (pow-1)/2)), 2))
+	}
 }

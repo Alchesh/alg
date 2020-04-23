@@ -125,7 +125,7 @@ func main() {
 	//fmt.Println("Fib=", Fib(7))
 
 	//m.CountSearchDup()
-	fmt.Println(PowerN(2, 2))
+	fmt.Println(PowerN2(2, 10))
 
 	fmt.Println("\nAll Done!")
 }

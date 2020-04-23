@@ -8,6 +8,7 @@ var MaxCount = 1000
 var RandomRange = 100
 
 func BenchmarkSeqSearchDup(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.SeqSearchDup()
@@ -15,6 +16,7 @@ func BenchmarkSeqSearchDup(b *testing.B) {
 }
 
 func BenchmarkSortSearchDup(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.SortSearchDup()
@@ -22,6 +24,7 @@ func BenchmarkSortSearchDup(b *testing.B) {
 }
 
 func BenchmarkHashSearchDup(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.HashSearchDup()
@@ -29,6 +32,7 @@ func BenchmarkHashSearchDup(b *testing.B) {
 }
 
 func BenchmarkSeqCalcMax(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.SeqCalcMax()
@@ -36,6 +40,7 @@ func BenchmarkSeqCalcMax(b *testing.B) {
 }
 
 func BenchmarkSortCalcMax(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.SortCalcMax()
@@ -43,6 +48,7 @@ func BenchmarkSortCalcMax(b *testing.B) {
 }
 
 func BenchmarkCountCalcMax(b *testing.B) {
+	b.Skip()
 	m := MyList{generate(1, MaxCount, RandomRange)}
 	for i := 0; i < b.N; i++ {
 		m.CountCalcMax()
