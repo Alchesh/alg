@@ -83,3 +83,15 @@ func SlowAdd(a, b int) int {
 
 	return SlowAdd(a-1, b) + 1
 }
+
+//SlowAdd - add by increment
+func SlowAdd1(a, b int) int {
+	if a == 0 {
+		return b
+	}
+	if b == 0 {
+		return a
+	}
+
+	return SlowAdd1(a-1, b-1) + 1 + 1
+}
