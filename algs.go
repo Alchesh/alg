@@ -127,7 +127,7 @@ func main() {
 	//m.CountSearchDup()
 	//fmt.Println(Dec2bin(9))
 	//fmt.Println(Any2any(137, 10, 5))
-	fmt.Println(IsPolyndrom("qweqwewqewq"))
+	//fmt.Println(IsPolyndrom("qweqwewqewq"))
 
 	fmt.Println("\nAll Done!")
 }
