@@ -136,3 +136,24 @@ func (m *MyList) CountCalcMax() (int, int) {
 
 	return MaxCount, el
 }
+
+// FindPair - find (i + j) = val
+func (m *MyList) FindPair(val int) [2]int {
+	sort.Ints((*m).mas)
+
+	sum := 0
+	j := len((*m).mas) - 1
+	i := 0
+	for i < len((*m).mas) {
+		sum = (*m).mas[i] + (*m).mas[j]
+		if sum == val {
+			return [2]int{(*m).mas[i], (*m).mas[j]}
+		}
+		if sum > val {
+			j--
+		} else {
+			i++
+		}
+	}
+	return [2]int{0, 0}
+}

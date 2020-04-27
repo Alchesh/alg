@@ -119,7 +119,7 @@ func main() {
 	// m := MyList{generate(0, 10)}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
-	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
+	m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
 
 	//fmt.Println("Summas=", SumMas([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
 	//fmt.Println("Fib=", Fib(7))
@@ -128,6 +128,7 @@ func main() {
 	//fmt.Println(Dec2bin(9))
 	//fmt.Println(Any2any(137, 10, 5))
 	//fmt.Println(IsPolyndrom("qweqwewqewq"))
+	fmt.Println(m.FindPair(217))
 
 	fmt.Println("\nAll Done!")
 }
