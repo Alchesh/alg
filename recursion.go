@@ -1,6 +1,7 @@
 package main
 
 import (
+	//	"fmt"
 	"math"
 )
 
@@ -94,4 +95,36 @@ func SlowAdd1(a, b int) int {
 	}
 
 	return SlowAdd1(a-1, b-1) + 1 + 1
+}
+
+//Dec2bin - decimal -> binary
+func Dec2bin(val int) int {
+	if val < 2 {
+		return val
+	}
+
+	return 10*Dec2bin(val/2) + (val % 2)
+}
+
+//Any2any - any -> any
+func Any2any(val, first, any int) int {
+	if val < any {
+		return val
+	}
+
+	return first*Any2any(val/any, first, any) + (val % any)
+}
+
+//IsPolyndrom - string is polyndrom
+func IsPolyndrom(s string) bool {
+	if len(s) < 2 {
+		return true
+	}
+
+	t := false
+	if s[0] == s[len(s)-1] {
+		t = true
+	}
+
+	return IsPolyndrom(s[1:len(s)-1]) && t
 }
