@@ -157,3 +157,21 @@ func (m *MyList) FindPair(val int) [2]int {
 	}
 	return [2]int{0, 0}
 }
+
+// RemoveDup - remove duplicates in list
+func (m *MyList) RemoveDup() []int {
+
+	sort.Ints((*m).mas)
+
+	res := []int{(*m).mas[0]}
+	cur := (*m).mas[0]
+
+	for i := 1; i < len((*m).mas); i++ {
+		if cur != (*m).mas[i] {
+			res = append(res, (*m).mas[i])
+			cur = (*m).mas[i]
+		}
+	}
+
+	return res
+}
