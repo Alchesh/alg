@@ -22,47 +22,6 @@ func (m *MyList) Sum() int {
 	return s
 }
 
-// SeqSearch - Sequantional search
-func (m *MyList) SeqSearch(val int) int {
-
-	res := -1
-
-	for i, v := range (*m).mas {
-		if v == val {
-			res = i
-			break
-		}
-	}
-
-	return res
-}
-
-// BinSearch - Binary search
-func (m *MyList) BinSearch(val int) int {
-
-	res := -1
-
-	l := 0
-	r := len((*m).mas)
-
-	for l < r {
-		// c := l + (r - l) / 2 // addition overflow
-		c := (l + r) / 2
-		if (*m).mas[c] == val {
-			res = c
-			break
-		} else {
-			if (*m).mas[c] > val {
-				r = c
-			} else {
-				l = c + 1
-			}
-		}
-	}
-
-	return res
-}
-
 // Get - get array
 func (m *MyList) Get() []int {
 	return (*m).mas
@@ -116,21 +75,16 @@ func generate(t, size, max_val int) []int {
 
 func main() {
 
-	// m := MyList{generate(0, 10)}}
+	m := MyList{generate(1, 50, 10)}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
 	// m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9}}
-	m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9, 1, 2, 3, 4, 5, 6, 9, 8, 0, 9}}
+	//m := MyList{[]int{1, 2, 3, 4, 5, 6, 9, 8, 9, 1, 2, 3, 4, 5, 6, 9, 8, 0, 9}}
 
-	//fmt.Println("Summas=", SumMas([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}))
-	//fmt.Println("Fib=", Fib(7))
-
-	//m.CountSearchDup()
-	//fmt.Println(Dec2bin(9))
-	//fmt.Println(Any2any(137, 10, 5))
-	//fmt.Println(IsPolyndrom("qweqwewqewq"))
-	//fmt.Println(m.FindPair(217))
-	fmt.Println(m.RemoveDup())
+	f := more
+	//f := less
+	m.BubbleSort1(f)
+	fmt.Println(m.mas)
 
 	fmt.Println("\nAll Done!")
 }

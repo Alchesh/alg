@@ -5,6 +5,47 @@ import (
 	"sort"
 )
 
+// SeqSearch - Sequantional search
+func (m *MyList) SeqSearch(val int) int {
+
+	res := -1
+
+	for i, v := range (*m).mas {
+		if v == val {
+			res = i
+			break
+		}
+	}
+
+	return res
+}
+
+// BinSearch - Binary search
+func (m *MyList) BinSearch(val int) int {
+
+	res := -1
+
+	l := 0
+	r := len((*m).mas)
+
+	for l < r {
+		// c := l + (r - l) / 2 // addition overflow
+		c := (l + r) / 2
+		if (*m).mas[c] == val {
+			res = c
+			break
+		} else {
+			if (*m).mas[c] > val {
+				r = c
+			} else {
+				l = c + 1
+			}
+		}
+	}
+
+	return res
+}
+
 // SeqSearchDup - sequence duplicates search
 func (m *MyList) SeqSearchDup() {
 
