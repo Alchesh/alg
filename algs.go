@@ -83,7 +83,8 @@ func main() {
 
 	f := more
 	//f := less
-	m.BubbleSort1(f)
+	//m.BubbleSort1(f)
+	m.InsertionSort(f)
 	fmt.Println(m.mas)
 
 	fmt.Println("\nAll Done!")
